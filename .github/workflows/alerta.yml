@@ -1,1 +1,14 @@
+name: Notificación a ntfy.sh
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Enviar notificación a ntfy.sh
+        run: curl -d "Se hizo un push a main en el repo" https://ntfy.sh/devops-itla
